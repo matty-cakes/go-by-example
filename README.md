@@ -1,4 +1,4 @@
-# Go By Example
+# Go By Example ⚡️
 
 ## What is this?
 
