@@ -7,7 +7,6 @@ import (
 // https://gobyexample.com/for
 func main() {
 	fmt.Println("Loops:")
-	fmt.Println("loops will require you to look at the code... sorry")
 
 	i := 1
 	for i <= 3 {
