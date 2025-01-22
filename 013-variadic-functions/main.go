@@ -25,9 +25,9 @@ func main() {
 	return total
 }`)
 	fmt.Println("-- Calling 's := sumAll(1, 3, 5, 7)' results in:", sumAll(1, 3, 5, 7))
-	fmt.Println("-- EFFECTIVE GO SIDE NOTE: The '...' syntax works both ways. For variadic function it comes all args INTO a slice (Ex: 'nums ...int'), but when placed on the otherside the elements in a slice are spread out INTO individual items.")
+	fmt.Println("-- EFFECTIVE GO SIDE NOTE: The '...' syntax works both ways. For variadic function it combines all args INTO a slice (Ex: 'nums ...int', nums == [1,3,5,7]), but when placed on the otherside the elements in a slice are spread out INTO individual items.")
 	nums := []int{1, 2, 3, 4}
 	fmt.Println("---- Example: 'nums := []int{1, 2, 3, 4}' & 'sumAll(nums...)'", sumAll(nums...))
-	fmt.Println("-- FURTHER NOTE: I know this way of demonstrating is a little wasteful and mind-bendy but hopefuly you get it.")
+	fmt.Println("-- FURTHER NOTE: I realize this way of demonstrating is a little wasteful and mind-bendy but hopefuly you get it.")
 
 }
