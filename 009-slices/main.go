@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"slices"
 )
 
 // https://gobyexample.com/slices
@@ -35,5 +36,25 @@ func main() {
 
 	tnkr := tinkerCopy[:4]
 	fmt.Println("-- We can slice to a known index from the start of a slice like this 'tnkr := tinkerCopy[:5]':", tnkr)
+
+	checkIt := []string{"c", "h", "e", "c", "k"}
+	fmt.Println("-- Slices can be initialized and populated in one line like so: 'checkIt := []string{\"c\", \"h\", \"e\", \"c\", \"k\"}': ", checkIt)
+
+	fmt.Println("-- You can use the 'slices' pkg for a variety of slice based helpers like 'slices.Equal(tnkr, checkIt)':", slices.Equal(tnkr, checkIt))
+
+	fmt.Println("---- Or how about 'slices.Contains(tnkr, \"t\")':", slices.Contains(tnkr, "t"))
+
+	twoD := make([][]int, 3)
+	for i := range 3 {
+		innerLen := i + 1
+		twoD[i] = make([]int, innerLen)
+		for j := range innerLen {
+			twoD[i][j] = i + j
+		}
+	}
+
+	fmt.Println("-- Check out this 2D slice!:", twoD)
+
+	fmt.Println("-- Check out https://go.dev/blog/slices-intro for further reading...")
 
 }
