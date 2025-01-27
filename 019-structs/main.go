@@ -9,14 +9,10 @@ type person struct {
 	age  int
 }
 
-// https://gobyexample.com/strings-and-runes
+// https://gobyexample.com/structs
 func main() {
 	fmt.Println("Structs:")
 	fmt.Println("In Go we can group logical entities together using structs. For example below is a basic struct for creating a person:")
-	type person struct {
-		name string
-		age  int
-	}
 	fmt.Println(`type person struct {
   name string
   age int
