@@ -9,7 +9,8 @@ type person struct {
 	age  int
 }
 
-func (p person) greet() { fmt.Printf("Hi I'm %s and I am %d years old...\n", p.name, p.age) }
+func (p person) greet()     { fmt.Printf("Hi I'm %s and I am %d years old...\n", p.name, p.age) }
+func (p *person) stateAge() { fmt.Printf("Hi I'm %d years old...\n", p.age) }
 
 // https://gobyexample.com/methods
 func main() {
@@ -26,5 +27,12 @@ func main() {
 	p := person{"John", 33}
 	fmt.Println("-- For example: 'p := person{\"John\", 33}'. p.greet():")
 	p.greet()
+	fmt.Println("-- We can also attach methods to POINTERS to VALUES of TYPES instead of VALUES of TYPES. By doing this we can mutate the value in question (as opposed to creating copies within the function)")
+	fmt.Println("-- Recall as well that Go will automatically handle pointer dereferncing for us so we can call it just like it were attached to a value.")
+	fmt.Println("-- Let's show an example of using a pointer receiver:")
+	fmt.Println("func (p *person) stateAge() { fmt.Printf(\"Hi I'm %d years old...\\n\", p.age) }")
+	fmt.Println("-- 'p.stateAge()':")
+	p.stateAge()
+	fmt.Println("NOTE: In the majority of cases it LIKELY makes sense to attach your methods to pointers...")
 
 }
